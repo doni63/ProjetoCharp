@@ -22,6 +22,12 @@ namespace SallerWebMvc.Controllers
         {
             return View();
         }
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Aplicativo de vendas de livro(estudando c#).";
+            ViewData["Email"] = "teste@email.com";
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
