@@ -2,8 +2,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SallerWebMvc.Data;
 var builder = WebApplication.CreateBuilder(args);
+
+//configurando string de conexao
+var connectionString = builder.Configuration.GetConnectionString("SallerWebMvcContextConection")
+    ?? throw new InvalidOperationException("Connection string 'SallerWebMvcContextConection' not found.");
+
+// Configurando o DbContext
 builder.Services.AddDbContext<SallerWebMvcContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SallerWebMvcContext") ?? throw new InvalidOperationException("Connection string 'SallerWebMvcContext' not found.")));
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
