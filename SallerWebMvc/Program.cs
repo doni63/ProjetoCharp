@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("SallerWebMvcContextConection")
     ?? throw new InvalidOperationException("Connection string 'SallerWebMvcContextConection' not found.");
 
-// Configurando o DbContext
+// Configurando o DbContext, odbcontext deve ter o mesmo nome usado no arquivo context dentro da pasta Data
 builder.Services.AddDbContext<SallerWebMvcContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
