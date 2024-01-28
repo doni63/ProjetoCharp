@@ -1,4 +1,3 @@
-D:\ProgramacaoCsharp\Udemy\projetoWeb\SallerWebMvc\SallerWebMvc\bin\Debug\net6.0\appsettings.Development.json
 D:\ProgramacaoCsharp\Udemy\projetoWeb\SallerWebMvc\SallerWebMvc\bin\Debug\net6.0\appsettings.json
 D:\ProgramacaoCsharp\Udemy\projetoWeb\SallerWebMvc\SallerWebMvc\bin\Debug\net6.0\SallerWebMvc.staticwebassets.runtime.json
 D:\ProgramacaoCsharp\Udemy\projetoWeb\SallerWebMvc\SallerWebMvc\bin\Debug\net6.0\SallerWebMvc.exe

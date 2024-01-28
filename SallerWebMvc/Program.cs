@@ -13,8 +13,16 @@ builder.Services.AddDbContext<SallerWebMvcContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<SeedingService>();
 
 var app = builder.Build();
+
+//chamando o SeedingService para popular o banco de dados
+using(var scope = app.Services.CreateScope())
+{
+    var seedingService = scope.ServiceProvider.GetService<SeedingService>();
+    seedingService.Seed();
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
