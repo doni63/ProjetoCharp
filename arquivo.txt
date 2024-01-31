@@ -1,0 +1,11 @@
+Criando um formulário simples para cadastro de vendedor
+*******************************************************
+
+1- ir na View/Sellers/Index e criar um link para CREATE;
+2- Criar a ação CREATE no Controller, essa ação será um GET, no C# será utilizado IActionResult;
+3- Na pasta View/Sellers cria a view chamada CREATE;
+4- inserir o metodo Insert no SellerService para enviar os dados no banco de dados;
+5- Criar o método CREATE do tipo Post no SellersController;
+
+
+

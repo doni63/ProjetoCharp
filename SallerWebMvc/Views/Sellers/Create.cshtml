@@ -1,0 +1,35 @@
+﻿@model SallerWebMvc.Models.Seller
+@{
+    ViewData["Title"] = "Create";
+}
+<style>
+    .btn-line-break {
+        display: block; /* Isso fará o botão aparecer em sua própria linha */
+        margin-top: 75%; /* Adiciona um pouco de espaço acima do botão, se necessário */
+    }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+<h4>Seller</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-range">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <label asp-for="BirthDate" class="form-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+                <label asp-for="Salary" class="form-label"></label>
+                <input asp-for="Salary" class="form-control" />
+            </div>
+            <div class="form-range btn-line-break">
+                <input type="submit" values="Create" class="btn btn-secondary" />
+            </div>
+            
+        </form>
+    </div>
+</div>
+

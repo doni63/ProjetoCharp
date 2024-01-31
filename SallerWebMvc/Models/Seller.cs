@@ -7,7 +7,7 @@ public class Seller
     public string Email { get; set; }
     public DateTime BirthDate { get; set; }
     public double Salary { get; set; }
-    public Department Department { get; set; } //associação um vendedor esta em um departamento
+    public Department? Department { get; set; } //associação um vendedor esta em um departamento
     public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>(); //um vendedor pode ter varias vendas
     public Seller() { }
 
