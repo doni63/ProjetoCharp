@@ -8,4 +8,30 @@ Criando um formulário simples para cadastro de vendedor
 5- Criar o método CREATE do tipo Post no SellersController;
 
 
+Criando um Componente Select para Selecionar Departamento para cadastrar um vendedor
+************************************************************************************
+1- Criando um classe de serviço de Departamento na pasta Service;
+2- Registrar o DepartamentoService em dependência de injeção no program.cs com o código:
+	builder.Services.AddScoped<DepartmentService>();
+3- Criar a classe SellerFormViewModel;
+4- No controller:
+	*Nova dependência para DepartamentoService;
+	*Update CREATE  Get Action;
+5- Em View/Sellers/create:
+	*atualizar a pagina create com @model SallerWebMvc.Models.ViewModels.ErrorViewModel
+	*atualizar os campos com a propriedade Seller, por exemplo:
+	<input asp-for="Seller.Name" class="form-control" />
+6- Montar o select para selecionar os departamentos já inseridos no banco de dados:
+	<div class="form-group">
+		<label asp-for="Seller.DepartmentId" class="control-label"></label>
+		<select asp-for="Seller.DepartmentId" asp-items="@(new SelectList(Model.Departments,"Id",
+		"Name"))" class="form-control"></select>
+	</div>
+	Esse código usa uma tagHelper asp-items, esse helper usa três atributos uma lista, uma chave, um nome para aparecer no input.
+	Nesse exemplo a lista é Model.Departments, a chave é o ID, e o nome para aparecer na caixa é Name.
+	
+	
+
+
+
 

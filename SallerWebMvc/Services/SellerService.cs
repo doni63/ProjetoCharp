@@ -20,7 +20,7 @@ public class SellerService
     //Metodo para inserir no banco de dados
     public void Insert(Seller objeto) 
     {
-        objeto.Department = _context.Department.First();
+        
         _context.Add(objeto);
         _context.SaveChanges();
     }

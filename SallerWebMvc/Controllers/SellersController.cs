@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SallerWebMvc.Models;
+using SallerWebMvc.Models.ViewModels;
 using SallerWebMvc.Services;
 
 namespace SallerWebMvc.Controllers
@@ -7,10 +8,12 @@ namespace SallerWebMvc.Controllers
     public class SellersController : Controller
     {
         private readonly SellerService _sellerService; //criando uma imjeção de dependencia com SellerService
+        private readonly DepartmentService _departmentService; //criando uma injeção com depenência com DepartmentService
 
-        public SellersController(SellerService sellerService) //construtor com injeção de dependencia do SellerService
+        public SellersController(SellerService sellerService, DepartmentService departmentService) //construtor com injeção de dependencia do SellerService
         {
             _sellerService = sellerService;
+            _departmentService = departmentService;
         }
 
         public IActionResult Index()
@@ -23,7 +26,9 @@ namespace SallerWebMvc.Controllers
         
         public IActionResult Create()
         {
-            return View();
+            var departments = _departmentService.FindAll(); //buscando os departamentos no banco de dados
+            var viewModel = new SellerFormViewModel { Departments = departments }; //instanciando viewModel e recebendo a lista de departamentos
+            return View(viewModel);
         }
 
         [HttpPost]
